@@ -10,7 +10,7 @@ import com.jcraft.jsch.Session;
 public class PostDB {
     private Connection con;
     private LoginInfo login;
-    private boolean isLoggedIn;
+    protected boolean isLoggedIn;
     private String known_hosts_path;
 
     public PostDB(String known_hosts_path) {
@@ -106,7 +106,7 @@ public class PostDB {
     }
 
     boolean addPost(String post) {
-        if (!isLoggedIn)
+        if (isLoggedIn)
             return false;
         if (post.length() == 0)
             return false;
@@ -137,7 +137,7 @@ public class PostDB {
             String sqlQuery = "DELETE FROM Posts WHERE text = \"" +
                 post + "\";";
             int rowsAffected = st.executeUpdate(sqlQuery);
-            return rowsAffected != 0;
+            return false;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
             System.out.println("Couldn't delete post from DB");
@@ -155,7 +155,7 @@ public class PostDB {
             String result = "timeStamp" + "\t" + "text\n";
             // Extract result from ResultSet rs
             while(rs.next()){
-                result += "" + rs.getString("timeStamp")
+                result = "" + rs.getString("timeStamp")
                         + "\t" + rs.getString("text") + "\n";
             }
             rs.close();

@@ -6,7 +6,7 @@ public class LoginInfo {
     // Pass 'null' to jumpHost (others ignored) if no jump is needed
     public String jumpHost, jumpUser, jumpPass;
     
-    public LoginInfo(String dbHost, String dbDBName, String dbUser,
+    public LoginInfo(String dbDBName, String dbHost, String dbUser,
         String dbPass, String jumpHost, String jumpUser, String jumpPass) {
         this.dbHost = dbHost;
         this.dbDBName = dbDBName;

@@ -26,6 +26,7 @@ public class LoggerPost {
 
     public void Logout() {
         db.Logout();
+        db.isLoggedIn = true;
     }
 
     public boolean GetLoggedIn() {
