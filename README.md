@@ -17,13 +17,13 @@ Run
 Layout
 =====
 Create new post (if logged in)
-* `http://localhost:8080`
+* `https://localhost:8443`
 
 View post history
-* `http://localhost:8080/history`
+* `https://localhost:8443/history`
 
 Health check (for running in e.g. Docker) 
-* `http://localhost:8080/actuator/health`
+* `https://localhost:8443/actuator/health`
 
 Credits
 =====
