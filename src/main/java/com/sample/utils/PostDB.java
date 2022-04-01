@@ -175,8 +175,8 @@ public class PostDB {
             return false;
         try {
             Statement st = con.createStatement();
-            String sqlQuery = "DELETE FROM Posts WHERE text = \"" +
-                post + "\";";
+            String sqlQuery = "DELETE FROM Posts WHERE text = '" +
+                post + "';";
             int rowsAffected = st.executeUpdate(sqlQuery);
             return rowsAffected != 0;
         } catch (SQLException e) {
