@@ -149,7 +149,7 @@ public class PostDB {
     boolean addPost(String post) {
         if (!isLoggedIn)
             return false;
-        if (post.length() == 0 || post == null)
+        if (post.length() == 0 || post == "null")
             return false;
         try {
             Statement st = con.createStatement();
